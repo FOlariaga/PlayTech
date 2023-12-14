@@ -1,0 +1,48 @@
+.product {
+    margin-top: 15px;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+.product img{
+    border-radius: 15px;
+}
+
+.image {
+    width: 400px;
+}
+
+.info {
+    width: 50%;
+    
+}
+
+.info h1 {
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.category {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.precio {
+    margin-top: 1rem;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.stock{
+    margin-top: 10px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.descripcion{
+    margin-top: 1rem;
+    font-size: 1.1rem;
+}

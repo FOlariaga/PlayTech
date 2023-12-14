@@ -1,22 +1,24 @@
 import classes from './Navbar.module.css'
 import CartWidget from '../CartWidget/CartWidget'
-import ItemNavbar from '../ItemNavbar/ItemNavbar'
+import { Link, useNavigate } from 'react-router-dom'
 
-const Navbar = function () {
+
+const Navbar = () => {
+    const navigate = useNavigate()
+
     return <>
         <nav className={classes.navbar}>
-            <a href="">
-                <div className={classes.logo}>
-                    <h1>PlayTech</h1>
-                </div>
-            </a>
+            <div className={classes.logo}>
+                <h1 onClick={() => { navigate("/") }}>PlayTech</h1>
+            </div>
             <div className={classes.conteiner}>
-            <ul className={classes.itemNavbar}>
-                <ItemNavbar text="inicio"/>
-                <ItemNavbar text="productos"/>
-                <ItemNavbar text="contacto"/>
-            </ul>
-                <CartWidget/>
+                <div className={classes.itemNavbar}>
+                    <Link to="/category/videojuegos">Videojuegos</Link>
+                    <Link to="/category/consolas">consolas</Link>
+                    <Link to="/category/accesorios">accesorios</Link>
+                    <Link to="/category/decoraciones">decoraciones</Link>
+                </div>
+                <CartWidget />
             </div>
         </nav>
     </>

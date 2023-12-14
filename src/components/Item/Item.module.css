@@ -1,0 +1,16 @@
+.tarjeta{
+    width: 300px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #010133;
+}
+img{
+    width: 100%;
+    border-radius: 5px;
+}
+.linkDetail{
+    background-color: aliceblue;
+    padding-inline: 0.15rem;
+    border: solid black 1px;
+    border-radius: 5px;
+}

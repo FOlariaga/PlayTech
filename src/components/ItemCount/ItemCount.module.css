@@ -1,0 +1,20 @@
+.itemCount{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.contador{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contador button{
+    width: 40px;
+    padding-inline: 0.25rem;
+    border-radius: 5px;
+}
+
+.addCard{
+    padding-inline: 0.25rem;
+}

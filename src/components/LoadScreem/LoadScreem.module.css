@@ -1,0 +1,32 @@
+.secLoadScreem{
+    background-color: rgb(41, 41, 41);
+    color: white;
+    height: calc(100vh - 64px);
+}
+.titleLoadScreem{
+    font-size: 30px;
+    padding: 1rem;
+}
+.loading{
+    padding: 2rem;
+    display: flex; 
+    align-items: center;
+    gap: 50px;
+}
+.pacman{
+    width: 100px;
+}
+.pacmanClose{
+    width: 100px;
+    visibility: hidden;
+    position: absolute;
+}
+.pastilla{
+    width: 30px;
+    height: 30PX;
+    background-color: #F3E0BB;
+    color: #F3E0BB;
+}
+.superPastilla{
+    width: 70px;
+}
