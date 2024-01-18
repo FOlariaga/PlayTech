@@ -1,0 +1,71 @@
+.title {
+    color: rgb(228, 228, 228);
+    padding: 1rem 0rem 0.5rem 4rem;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(39, 38, 38);
+    color: white;
+    padding: 20px;
+    border: 5px inset rgb(39, 39, 39);
+    margin-block: 10px;
+}
+
+.form input {
+    width: 200px;
+    padding: 5px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+.button {
+    padding: 8px;
+    border-radius: 15px;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.orderGenerate{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(39, 38, 38);
+    color: white;
+    padding: 20px;
+    border: 5px inset rgb(39, 39, 39);
+    margin-block: 10px;
+}
+.cardOrder{
+    background-color: rgb(219, 190, 151);
+    margin-inline: 10%;
+    margin-top: 40px ;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.cardOrder h2{
+    font-size: 2rem;
+}
+.dataForm{
+    margin-inline-start: 30%;
+}
+
+.dataForm h3{
+    font-size: 1.7rem;
+}
+.buttonReset{
+    background-color: antiquewhite;
+    padding: 8px;
+    border: solid rgb(0, 0, 0) 1px;
+    border-radius: 15px;
+    font-size: 1rem;
+    font-weight: 500;
+}

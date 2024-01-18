@@ -1,8 +1,10 @@
+import classes from "../Checkout/Checkout.module.css"
 import { useState } from "react"
 import { useCart } from "../../context/context"
 import { db } from "../../services/firebase/firebaseConfig"
 import { addDoc, getDocs, collection, query, where, documentId, writeBatch } from 'firebase/firestore'
 import LoadScreem from "../LoadScreem/LoadScreem"
+import { Link } from "react-router-dom"
 
 const Checkout = () => {
 
@@ -69,13 +71,17 @@ const Checkout = () => {
     
     if (orderId) {
         return <>
-            <div>
-                <h1>el numero de orden es {orderId}</h1>
-                <h2>datos del Comprador:</h2>
+            <div className={classes.cardOrder}>  
+                <h1>El numero de orden es: " {orderId} "</h1>
+                <h2 >Datos del Comprador:</h2>
+                <div className={classes.dataForm}>
                 <h3>Nombre: {useData.name}</h3>
                 <h3>Email: {useData.email}</h3>
                 <h3>Telefono: {useData.phone}</h3>
-            </div>
+                </div>
+
+                <Link className={classes.buttonReset} to="/">volver a la tienda</Link>
+           </div>
 
         </>
     }
@@ -83,20 +89,20 @@ const Checkout = () => {
     if (loading) {
         return <>
             <LoadScreem />
-            <h1></h1>
         </>
     }
 
     return <div>
-        <h1>Checkout</h1>
+        <h1 className={classes.title}>Checkout</h1>
 
         {
             useData
-                ? <>
+                ? <div className={classes.orderGenerate}>
+                    <h1>Buenas noticias!!!</h1>
                 <h2>Sus datos se cargaron correctamente y puede generar su orden</h2>
-                <button onClick={createOrder}> generar orden </button>
-                </>
-                : <form onSubmit={(ev) => {
+                <button className={classes.button} onClick={createOrder}> generar orden </button>
+                </div>
+                : <form className={classes.form} onSubmit={(ev) => {
                     ev.preventDefault()
                     if (ev.target.nombre.value !== "" && ev.target.correo.value !== "" && ev.target.celular.value !== "" ) {
                         setUseData({
@@ -108,13 +114,13 @@ const Checkout = () => {
                         alert("llene todos los campos solisitados")
                     }
                 }}>
-                    <h2>nombre:</h2>
+                    <h2>Nombre:</h2>
                     <input name="nombre" type="text" placeholder="Ingrese su nombre"/> <br />
-                    <h2>email:</h2>
+                    <h2>Email:</h2>
                     <input name="correo" type="email" placeholder="Ingrese su email"/> <br />
-                    <h2>telefono celular:</h2>
-                    <input name="celular" type="number" placeholder="Ingrese su telefono"/> <br />
-                    <button type="submit"> cargar datos </button>
+                    <h2>Telefono celular:</h2>
+                    <input  name="celular" type="number" placeholder="Ingrese su telefono"/> <br />
+                    <button className={classes.button} type="submit"> cargar datos </button>
                 </form>
         }
 
