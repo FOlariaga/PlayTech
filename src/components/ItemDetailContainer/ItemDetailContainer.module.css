@@ -1,7 +1,7 @@
 .secDetail{
     background-color: rgb(41, 41, 41);
     color: white;
-    height: calc(100vh - 64px);
+    height: calc(100vh - 62px);
 }
 .titleDetail{
     font-size: 30px;

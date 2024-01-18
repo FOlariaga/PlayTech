@@ -1,9 +1,10 @@
 import classes from "./ItemDetailContainer.module.css"
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
-import { getProductById } from "../../asyncMock"
 import ItemDetail from "../ItemDetail/ItemDetail"
 import LoadScreem from "../LoadScreem/LoadScreem"
+import { getDoc, doc } from "firebase/firestore"
+import { db } from "../../services/firebase/firebaseConfig"
 
 const ItemDetailContainer = () => {
     const [loading, setLoading] = useState(true)
@@ -14,9 +15,15 @@ const ItemDetailContainer = () => {
     useEffect(() => {
         setLoading(true)
 
-        getProductById(productId)
-            .then((response) => {
-                setProduct(response)
+        const refDoc = doc(db, "products", productId)
+
+        getDoc(refDoc)
+            .then((QueryDocumentSnapshot) => {
+                const fields = QueryDocumentSnapshot.data()
+                const productAdapted = {id: QueryDocumentSnapshot.id, ...fields}
+
+                setProduct(productAdapted)
+
             })
             .catch(() => {
                 console.log("error")
