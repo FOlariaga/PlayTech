@@ -55,8 +55,6 @@ export const CartProvider = ({ children }) => {
         return accumulated
     }
 
-    // const total = getTotal()
-
     const clearCart = () => {
         setCart([])
     }

@@ -2,12 +2,12 @@ import {getFirestore} from "firebase/firestore"
 import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBRtJan5s4PJIexuG-XKW4Ixz_XG1Jb2hA",
-  authDomain: "playtech-47028.firebaseapp.com",
-  projectId: "playtech-47028",
-  storageBucket: "playtech-47028.appspot.com",
-  messagingSenderId: "256294890641",
-  appId: "1:256294890641:web:4e8726857647e552332330"
+  apiKey: import.meta.env.VITE_apikey,
+  authDomain: import.meta.env.VITE_authDomain,
+  projectId: import.meta.env.VITE_projectId,
+  storageBucket: import.meta.env.VITE_storageBucket,
+  messagingSenderId: import.meta.env.VITE_messagingSenderId,
+  appId: import.meta.env.VITE_appId
 };
 
 
